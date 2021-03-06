@@ -33,15 +33,15 @@ io.on('connection', (socket)=>{
         io.to(user.room).emit('roomData', {room: user.room, users: getUsersInRoom(user.room)});
         
         let deck = createDeck();
-        console.log(deck);
-        socket.emit('message', {user: 'deck', text: `First Card in Deck: ${deck[0]}`})
+        //console.log(deck);
+       // socket.emit('message', {user: 'deck', text: `First Card in Deck: ${deck[0]}`})
         let hand
         [hand, deck] = dealToHand(deck, 10, (error)=>{
             console.log(erorr)
         });
-        socket.emit('message', {user: 'deck', text: `First Card in Hand: ${hand[0]}`})
+       // socket.emit('message', {user: 'deck', text: `First Card in Hand: ${hand[0]}`})
 
-        callback(); 
+        callback(hand); 
     });
 
     socket.on('sendMessage', (message, callback)=>{
