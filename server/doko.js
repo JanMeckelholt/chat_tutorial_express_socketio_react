@@ -60,7 +60,7 @@ const sortHand = (hand) =>{
                 var temp = sortedHand[j];
                 sortedHand[j] = sortedHand[j+1];
                 sortedHand[j + 1] = temp;
-                console.log('temp' + temp)
+                //console.log('temp' + temp)
             }
         }
     }
